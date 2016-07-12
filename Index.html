@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<script src="dsgn.js"></script>
+
+</head>
+
+<style>
+	div
+	{
+		background-color: #70aacc;
+		margin: 50px 10px 8px 20px; /* top right bottom left*/
+		padding: 90px ; /*you can also put four numbers to to do top right bottom and left*/
+		border: dotted 5px rgba(180,190,80,.50); 
+		width: 100%;
+	}
+	#one{
+		background-color: green;
+	}
+	.blue-div{
+		background-color: #0000cc;
+	}
+	#cat-01{
+		background-image:url(http://i.telegraph.co.uk/multimedia/archive/03345/cat_3345879b.jpg);
+		width:100%;
+		background-size:cover;
+		background-position: center center;
+		min-height:400px;
+		padding:2em;
+	}
+	#cat-01-screen{
+		background-color:rgba(123,200,100,.5);
+	}
+
+</style>
+
+
+<body>
+	<div id="one">DIV 1</div>
+	<div class="blue-div">DIV 2</div>
+	<div class="blue-div">DIV 3</div>
+	<div id="cat-01">
+		<div id="cat-01-screen">Looook at the caaat</div> /* putting a div within a div allows you to put something over the first div */
+		<h1><br>DIV 4<br> /* br adds a line break */
+		</h1>
+	</div>
+	<div>DIV 5</div>
+
+</body>
+</html>
