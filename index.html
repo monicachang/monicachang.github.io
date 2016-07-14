@@ -3,6 +3,9 @@
 <head>
 	<title></title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.js"></script>
+
 <script src="applesandbananas.js"> </script>
 
 </head>
@@ -20,7 +23,7 @@
 
 	}
 	#titlePage{
-		background-color: #006600;
+		background-color: #008200;
 		padding: 0px 0px 0px 0px;
 	}
 		.apple {
@@ -43,6 +46,10 @@
 		.middlefruits:hover {
 			opacity:0.1;
 		}
+
+	#learn{
+		background-color: #c70000;
+	}
 
 	#verse1{
 		background-color: #007000;
@@ -67,6 +74,9 @@
 	#verse5{
 		background-color: #009000;
 	}
+	#verse6{
+		background-color: #009600;
+	}
 
 </style>
 
@@ -90,8 +100,6 @@
 		<img class="banana" src="images/banana.png">
 		<img class="banana" src="images/banana.png">
 		<h1><img class=middlefruits src="images/apple.png" height=97.9px width=103.4px> APPLES & BANANAS <img class=middlefruits src="images/banana.png" height=97.9px width=103.4px></h1>
-
-	
 		<img class="apple" src="images/apple.png"> 
 		<img class="apple" src="images/apple.png">
 		<img class="apple" src="images/apple.png">
@@ -109,11 +117,32 @@
 		<img class="banana" src="images/banana.png">
 		<img class="banana" src="images/banana.png">
 
-	
-
+		<br><input type="button" value="LISTEN"  onclick="play('audio1')">
+			<audio id="audio1" src="audio/1.m4a"></audio>
 		</div>
+
+	<div id="learn">
+		<h1><br>Learn Your Vowels<br>
+			<input type="button" value="A"  onclick="play('audioA')">
+			<audio id="audioA" src="audio/A.m4a"></audio>
+
+			<input type="button" value="E"  onclick="play('audioE')">
+			<audio id="audioE" src="audio/E.m4a"></audio>
+
+			<input type="button" value="I"  onclick="play('audioI')">
+			<audio id="audioI" src="audio/I.m4a"></audio>
+
+			<input type="button" value="O"  onclick="play('audioO')">
+			<audio id="audioO" src="audio/O.m4a"></audio>
+
+			<input type="button" value="U"  onclick="play('audioU')">
+			<audio id="audioU" src="audio/U.m4a"></audio>
+
+		</h1></div>
+
 	<div id="verse1">
 		<p>I like to eat, eat, eat apples and bananas<br>I like to eat, eat, eat apples and bananas<br><p></div>
+
 	<div id="verse2">
 		<h1>A</h1>
 		<p>I like to ate, ate, ate ay-ples and ba-nay-nays<br>I like to ate, ate, ate ay-ples and ba-nay-nays<br></p></div>
@@ -126,6 +155,9 @@
 	<div id="verse5">
 		<h1>O</h1>
 		<p>I like to ote, ote, ote oh-ples and bo-no-nos<br>I like to ote, ote, ote oh-ples and bo-no-nos<br></p></div>
+	<div id="verse6">
+		<h1>U</h1>
+		<p>I like to ute, ute, ute u-ples and bu-nu-nus<br>I like to ute, ute, ute u-ples and bu-nu-nus<br></p></div>
 
 </body>
 </html>
