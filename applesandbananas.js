@@ -13,11 +13,14 @@ $(document).ready(function() {
 
 
 
-$("#verse1").hover(function() {
-    $(this).animate({color:"black"}, 1500);
-}, function() {
+$("#verse1").hover(
+	function() {
+    	$(this).animate({color:"black"}, 1500);
+    },
+	 function() {
     $(this).animate({color:"white"}, 1500);
-});
+	}
+);
 
 $("#verse2").hover(function() {
     $(this).animate({color:"black"}, 1500);
