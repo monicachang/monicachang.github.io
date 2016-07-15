@@ -4,61 +4,63 @@ $(document).ready(function() {
 
 	$("#learn").hover(function(){
 	$("#learn").animate({color: "black"}, 1200);
-},
+	},
 	function(){
 		$("#learn").stop().animate({color:"white"});
-});
-
-
-
-
-
-$("#verse1").hover(
-	function() {
-    	$(this).animate({color:"black"}, 1500);
-    },
-	 function() {
-    $(this).animate({color:"white"}, 1500);
-	}
-);
-
-$("#verse2").hover(function() {
-    $(this).animate({color:"black"}, 1500);
-}, function() {
-    $(this).animate({color:"white"}, 1500);
-});
-
-$("#verse3").hover(function() {
-    $(this).animate({color:"black"}, 1500);
-}, function() {
-    $(this).animate({color:"white"}, 1500);
-});
-
-$("#verse4").hover(function() {
-    $(this).animate({color:"black"}, 1500);
-}, function() {
-    $(this).animate({color:"white"}, 1500);
-});
-
-$("#verse5").hover(function() {
-	$(this).animate({color:"black"}, 1500);
-}, function() {
-	$(this).animate({color:"white"}, 1500);
-});
-
-$("#verse6").hover(function() {
-	$(this).animate({color:"black"}, 1500);
-}, function() {
-	$(this).animate({color:"white"}, 1500);
-});
-
-
-
-
-
-$("#dropdownrecipes").change(function(){
-		alert($(this).val());
 	});
+
+
+
+
+
+	/*$("#verse1").mouseenter(function() {
+	    	$(this).animate({color:"black"}, 1500);
+	    },
+		 function() {
+	    $(this).animate({color:"white"}, 1500);
+		}
+	);*/
+
+
+	$("#verse2").hover(function() {
+		console.log("HOVER VERSE 2");
+	    $(this).css({"color":"black"}, 1500);
+	}, function() {
+		console.log("UNHOVER VERSE 2");
+	    $(this).css({color:"white"}, 1500);
+	});
+
+	$("#verse3").hover(function() {
+	    $(this).animate({color:"black"}, 1500);
+	}, function() {
+	    $(this).animate({color:"white"}, 1500);
+	});
+
+	$("#verse4").hover(function() {
+	    $(this).animate({color:"black"}, 1500);
+	}, function() {
+	    $(this).animate({color:"white"}, 1500);
+	});
+
+	$("#verse5").hover(function() {
+		$(this).animate({color:"black"}, 1500);
+	}, function() {
+		$(this).animate({color:"white"}, 1500);
+	});
+
+	$("#verse6").hover(function() {
+		$(this).animate({color:"black"}, 1500);
+	}, function() {
+		$(this).animate({color:"white"}, 1500);
+	});
+
+
+
+
+
+	$("#dropdownrecipes").change(function(){
+			alert($(this).val());
+		});
 
 
 });
