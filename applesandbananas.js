@@ -11,49 +11,41 @@ $(document).ready(function() {
 
 
 
-
-
-	/*$("#verse1").mouseenter(function() {
-	    	$(this).animate({color:"black"}, 1500);
-	    },
-		 function() {
-	    $(this).animate({color:"white"}, 1500);
-		}
-	);*/
-
+	$("#verse1").hover(function() {
+	    $(this).animate({color:"#a90000"}, 1000);
+	}, function() {
+	    $(this).animate({color:"white"}, 1000);
+	});
 
 	$("#verse2").hover(function() {
-		console.log("HOVER VERSE 2");
-	    $(this).css({"color":"black"}, 1500);
+	    $(this).animate({color:"#ad0000"}, 1000);
 	}, function() {
-		console.log("UNHOVER VERSE 2");
-	    $(this).css({color:"white"}, 1500);
+	    $(this).animate({color:"white"}, 1000);
 	});
 
 	$("#verse3").hover(function() {
-	    $(this).animate({color:"black"}, 1500);
+	    $(this).animate({color:"#b20000"}, 1000);
 	}, function() {
-	    $(this).animate({color:"white"}, 1500);
+	    $(this).animate({color:"white"}, 1000);
 	});
 
 	$("#verse4").hover(function() {
-	    $(this).animate({color:"black"}, 1500);
+	    $(this).animate({color:"#b60000"}, 1000);
 	}, function() {
-	    $(this).animate({color:"white"}, 1500);
+	    $(this).animate({color:"white"}, 1000);
 	});
 
 	$("#verse5").hover(function() {
-		$(this).animate({color:"black"}, 1500);
+		$(this).animate({color:"#ba0000"}, 1000);
 	}, function() {
-		$(this).animate({color:"white"}, 1500);
+		$(this).animate({color:"white"}, 1000);
 	});
 
 	$("#verse6").hover(function() {
-		$(this).animate({color:"black"}, 1500);
+		$(this).animate({color:"#be0000"}, 1000);
 	}, function() {
-		$(this).animate({color:"white"}, 1500);
+		$(this).animate({color:"white"}, 1000);
 	});
-
 
 
 
@@ -62,8 +54,9 @@ $(document).ready(function() {
 			alert($(this).val());
 		});
 
-
 });
+
+
 
 function play(myVowels){
        var audio = document.getElementById(myVowels);
