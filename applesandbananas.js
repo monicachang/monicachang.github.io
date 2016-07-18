@@ -10,15 +10,41 @@ $(document).ready(function() {
 	});
 
 
-	$("#verse1").hover(function() {
+	/*$("#verse1").hover(function() {
 	    $(this).animate({color:"#a90000"}, 1000);
 	}, function() {
 	    $(this).animate({color:"white"}, 1000);
+	});*/
+
+	var audioElem = document.getElementById("audio1");
+	$("#verse1apple").click(function() {
+		audioElem.play();
+		$("#clickme").hide();
+		$(this).fadeOut(5000);
+		$("#verse1").animate({color:"#ffffff"}, 4600);
+		$("#verse1").animate({color:"#000000"}, 450);
+		$("#verse1").animate({color:"#b50000"}, 450);
+		$("#verse1").animate({color:"#ffffff"}, 450);
+		$(this).animate({left: "+=105", top:"+=43"}, 2500);
+		$(this).fadeIn(500);
+		$(this).fadeOut(35);
+		$(this).animate({left: "+=200"}, 650);
+		$(this).fadeIn(500);
+		$(this).fadeOut(1500);
+		$("#verse1").animate({backgroundColor: "#009000" }, 6500);
+		$("#verse1").animate({backgroundColor: "#b50000" }, 450);
+		$("#verse1").animate({backgroundColor: "#000000" }, 450);
+		$("#verse1").animate({backgroundColor: "#009000" }, 450);
+		$(this).animate({left: "-=190", top:"+=105"}, 4800);
+		$(this).fadeIn(500);
+		$(this).fadeOut(35);
+		$(this).animate({left: "+=200"}, 650);
+		$(this).fadeIn(500);
+		$(this).fadeOut(1500);
+		$(this).animate({left: "-=315", top:"-=148"}, 500);
+		$(this).fadeIn(500);
+		
 	});
-
-
-
-	
 
 
 	$("#verse2").hover(function() {
@@ -58,33 +84,9 @@ $(document).ready(function() {
 			alert($(this).val());
 		});
 
-	$("#verse1apple").click(function() {
-		$(this).animate({top: "+=450", left: "+=50"}, 1000);
-		$(this).animate({top: "-=380", left: "+=60"}, 1000);
-		$(this).animate({top: "+=380", left: "+=70"}, 1000);
-		$(this).animate({top: "-=285", left: "+=81"}, 1000);
-		$(this).animate({top: "+=285", left: "+=92"}, 1000);
-		$(this).animate({top: "-=140", left: "+=104"}, 1000);
-		$(this).animate({top: "+=140", left: "+=116"}, 1000);
-		$(this).animate({top: "-=60", left: "+=129"}, 1000);
-		$(this).animate({top: "+=60", left: "+=143"}, 1000); 
-	});
 });
 
 
-function toggleSound1() {
-
-  var audioElem = document.getElementById("audio1");
-
-  if (audioElem.paused) {
-    audioElem.play();
-	document.getElementById("listenbutton").value="||";
-	}
-  else {
-    audioElem.pause();
-	document.getElementById("listenbutton").value="LISTEN";
-	}
-}
 
 function toggleSoundA() {
 

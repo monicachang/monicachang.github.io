@@ -162,8 +162,23 @@
 		height: 48.45px;
 		width: 51.7px;
 		position: relative;
-		bottom: 160px;
-		right: 400px;
+	}
+	#verse1banana2{
+		height: 48.45px;
+		width: 51.7px;
+		opacity: 0;
+
+	}
+	#verse1banana3{
+		height: 48.45px;
+		width: 51.7px;
+		opacity: 0;
+	}
+	#clickme{
+		padding: 0px 0px 0px 0px;
+		font-weight: 500;
+		font-size: 18px;
+		color: #ffffff;
 	}
 	#verse2{
 		background-color: #009400;
@@ -325,8 +340,8 @@
 		<img class="fruit9" src="images/banana.png">
 		<img class="fruit10" src="images/banana.png">
 
-		<br><input id=listenbutton type="button" value="LISTEN"  onclick="javascript:toggleSound1();"></input>
-			<audio id="audio1" src="audio/1.m4a"></audio><br>
+	
+		<audio id="audio1" src="audio/1.m4a"></audio>
 		</div>
 
 	<div id="learn">
@@ -360,7 +375,10 @@
 
 
 	<div id="verse1">
+		<div id=clickme>CLICK ME</div>
+		<img id="verse1banana3" src="images/banana.png">
 		<img id="verse1apple" src="images/apple.png">
+		<img id="verse1banana2" src="images/banana.png">
 		<p>I like to eat, eat, eat apples and bananas<br>I like to eat, eat, eat apples and bananas<br><p></div>
 
 	<div id="verse2">
