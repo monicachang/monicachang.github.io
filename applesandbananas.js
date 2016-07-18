@@ -10,12 +10,6 @@ $(document).ready(function() {
 	});
 
 
-	/*$("#verse1").hover(function() {
-	    $(this).animate({color:"#a90000"}, 1000);
-	}, function() {
-	    $(this).animate({color:"white"}, 1000);
-	});*/
-
 	var audioElem = document.getElementById("audio1");
 	$("#verse1apple").click(function() {
 		audioElem.play();
@@ -27,21 +21,30 @@ $(document).ready(function() {
 		$("#verse1").animate({color:"#ffffff"}, 450);
 		$(this).animate({left: "+=105", top:"+=43"}, 2500);
 		$(this).fadeIn(500);
-		$(this).fadeOut(35);
-		$(this).animate({left: "+=200"}, 650);
-		$(this).fadeIn(500);
+		$(this).fadeOut(35, function(){
+			$(this).attr('src', 'images/banana.png');	
+		});
+		$(this).animate({left: "+=200"}, 650); 
+		$(this).fadeIn(500); 
 		$(this).fadeOut(1500);
-		$("#verse1").animate({backgroundColor: "#009000" }, 6500);
+		$("#verse1").animate({backgroundColor: "#009000" }, 6670);
 		$("#verse1").animate({backgroundColor: "#b50000" }, 450);
 		$("#verse1").animate({backgroundColor: "#000000" }, 450);
 		$("#verse1").animate({backgroundColor: "#009000" }, 450);
-		$(this).animate({left: "-=190", top:"+=105"}, 4800);
+		$(this).animate({left: "-=190", top:"+=108"}, 4800);
+		$(this).fadeOut(35, function(){
+			$(this).attr('src', 'images/apple.png');	
+		});
 		$(this).fadeIn(500);
-		$(this).fadeOut(35);
+		$(this).fadeOut(35, function(){
+			$(this).attr('src', 'images/banana.png');	
+		});
 		$(this).animate({left: "+=200"}, 650);
 		$(this).fadeIn(500);
-		$(this).fadeOut(1500);
-		$(this).animate({left: "-=315", top:"-=148"}, 500);
+		$(this).fadeOut(1500, function(){
+			$(this).attr('src', 'images/apple.png');	
+		});
+		$(this).animate({left: "-=315", top:"-=151"}, 500);
 		$(this).fadeIn(500);
 		
 	});
@@ -86,11 +89,14 @@ $(document).ready(function() {
 
 
 
-
 	$("#dropdownrecipes").change(function(){
 			alert($(this).val());
 		});
 
+	$("#top").click(function (e){
+		e.preventDefault();
+		$("html,body").animate({scrollTop: 0}, 600);
+	});
 });
 
 
@@ -164,17 +170,5 @@ function toggleSoundU() {
 	document.getElementById("buttonU").value="U";
 	}
 }
-/*function toggleSound() {
-
-  var audioElem = document.getElementById("audioA");
-  if (audioElem.paused) {
-    audioElem.play();
-	document.getElementById("buttonA").value="||";
-	}
-  else {
-    audioElem.pause();
-	document.getElementById("buttonA").value="A";
-	}
-}*/
 
 
