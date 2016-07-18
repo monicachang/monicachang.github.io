@@ -46,35 +46,42 @@ $(document).ready(function() {
 		
 	});
 
+	$("#verse1apple").mouseover(function() {
+		$(this).css("opacity", "1");
+	});
+	$("#verse1apple").mouseleave(function() {
+		$(this).css("opacity", "0.75");
+	});
+
 
 	$("#verse2").hover(function() {
-	    $(this).animate({color:"#ad0000"}, 1000);
+	    $(this).animate({color:"#ad0000"}, 800);
 	}, function() {
-	    $(this).animate({color:"white"}, 1000);
+	    $(this).animate({color:"white"}, 800);
 	});
 
 	$("#verse3").hover(function() {
-	    $(this).animate({color:"#b20000"}, 1000);
+	    $(this).animate({color:"#b20000"}, 800);
 	}, function() {
-	    $(this).animate({color:"white"}, 1000);
+	    $(this).animate({color:"white"}, 800);
 	});
 
 	$("#verse4").hover(function() {
-	    $(this).animate({color:"#b60000"}, 1000);
+	    $(this).animate({color:"#b60000"}, 800);
 	}, function() {
-	    $(this).animate({color:"white"}, 1000);
+	    $(this).animate({color:"white"}, 800);
 	});
 
 	$("#verse5").hover(function() {
-		$(this).animate({color:"#ba0000"}, 1000);
+		$(this).animate({color:"#ba0000"}, 800);
 	}, function() {
-		$(this).animate({color:"white"}, 1000);
+		$(this).animate({color:"white"}, 800);
 	});
 
 	$("#verse6").hover(function() {
-		$(this).animate({color:"#be0000"}, 1000);
+		$(this).animate({color:"#be0000"}, 800);
 	}, function() {
-		$(this).animate({color:"white"}, 1000);
+		$(this).animate({color:"white"}, 800);
 	});
 
 
