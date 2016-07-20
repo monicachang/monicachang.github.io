@@ -11,7 +11,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get("/", function (req, res) { 
+app.get("/", function (req, res) { //this doesn't have to do with the price stuff, it is just an example to show the usage of sending
   res.send("Hello World!"); 
 });
 
@@ -23,7 +23,7 @@ app.get("/set_price", function(req, res){
 });
 
 app.get("/retrieve_price", function(req, res){ //took the variable from above and put it in the localhost:3000/retrieve_price
-    res.send("The car price is: " + carPrice + "The car color is: " + carColor);
+    res.send("The car price is: " + carPrice + " The car color is: " + carColor);
 });
 
 app.listen(3000, function () {

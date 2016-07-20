@@ -1,0 +1,75 @@
+body {
+	font: 13px;
+	font-family: courier;
+	background-color: #553636;
+}
+
+#chat-meta {
+	padding: 5px;
+}
+
+#chat-name {
+	border: none;
+	color: #839B7E;
+}
+
+#chat-start {
+	color: #839B7E;
+	padding: 3px;
+	vertical-align: middle;
+}
+
+#chat-log {
+	background-color: #553636;
+	margin: none;
+	border: none;
+	position: fixed;
+	top: 30px;
+	bottom: 90px;
+	width: 100%;
+	overflow-y: scroll;
+}
+
+#chat-log ul {
+
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	color: #ffffff;
+}
+
+#chat-log ul li {
+	padding: 3px 10px;
+}
+
+#chat-log ul li.them-line { /*give us every odd numbered child that is an li in the ul in the chat box*/
+	background-color: #839B7E;
+	color: #ffffff;
+}
+
+form {
+	width: 100%;
+	background-color: #fff;
+	position: fixed;
+	bottom: 0px;
+	left: 5px
+	right: 5px;
+	height: 10%;
+}
+
+form #chat-input {
+	border: none;
+	padding: 10px;
+	width: 90%; 
+	margin-right: .5%;
+}
+
+form button {
+	width: 9%;
+	background-color: #839B7E;
+	border: none;
+	padding: 10px;
+}
+
+
+

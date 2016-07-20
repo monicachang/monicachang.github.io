@@ -3,30 +3,79 @@
 	<title>API Example</title>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
 	<script>
 
+	
 		$(document).ready(function(){
-			$.ajax({
-				url: "https://api.spotify.com/v1/search?q=prince&type=album",
-				success: ajaxHandler
+
+			$("#api_search").click(function(e){
+				e.preventDefault(); //prevents from refreshing
+
+				$("#api_result").text(""); //replace the text the was there previously when you click search
+
+				$.ajax({ // retrieves information from the following url without having to refresh the page
+					url: "https://api.spotify.com/v1/search", //"pizza place" form the analogy // you can add the following data properties and this url: "https://api.spotify.com/v1/search" (this will be easier to see each element)instead of having this url: "https://api.spotify.com/v1/search?q=prince&type=album" and not have the data properties following 
+					data:{ //put what extensions are going into the url so you can filter the searches
+						q: $("#api_field").val() + ":" + $("#api_term").val(), 
+						type: $("#api_return").val(),
+						limit: $("#numberofresults").val()
+					},
+					success: ajaxHandler //when it is a successful call to the api, use the ajaxHandler function defined below (referencing a function in js doesn't require parentheses)
+				});
 			});
+			
+
 		});
 
 		function ajaxHandler(data)
 		{
 			console.log(data);
 
-			var results = data.albums.items;
-			for(var i = 0; i < results.length; i++)
+			var typeString = $("#api_return").val() + "s"; //adds an s to the values in our api_return dropdown
+
+
+			var results = data[typeString].items; //Array of albums
+			for(var i = 0; i < results.length; i++) //interate through each item in array of albums
 			{
-				$("#api_result").append(results[i].name + "\n");
+				$("#api_result").append(results[i].name + "\n"); //change the .name to .id would give you the ids of the albums instead of the names
 			}
 		}
-
 	</script>
 
 </head>
 <body>
+
+	<form>
+	<fieldset>
+		<label>Search Term:</label>
+		<input type="text" id="api_term">
+	</fieldset>
+	<fieldset>
+		<label>Search In:</label>
+		<select id="api_field">
+			<option value="album">Albums</option>
+			<option value="artist">Artists</option>
+			<option value="track">Tracks</option>
+			<option value="playlist">Playlists</option>
+		</select>
+	</fieldset>
+	<fieldset>
+		<label>Return Only:</label>
+		<select id="api_return">
+			<option value="album">Albums</option>
+			<option value="artist">Artists</option>
+			<option value="track">Tracks</option>
+			<option value="playlist">Playlists</option>
+		</select>
+	</fieldset>
+	<fieldset>
+		<label>Number of Results:</label>
+		<input type="text" id="numberofresults">
+	</fieldset>
+	<button id="api_search">Search the API</button>
+	</form>
+
 	<textarea id="api_result" cols=60 rows=20></textarea>
 </body>
 </html>
