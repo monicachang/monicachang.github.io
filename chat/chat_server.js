@@ -29,7 +29,7 @@ app.get('/get_archive', function(req, res){ //when somebody pins the url /get_ar
 	res.send(chatArchive); //we want to use the response to send the chat archive 
 });
 
-
+S
 app.use(express.static('public'));
 app.get('/chat', function(req,res){
   res.sendFile(__dirname + '/chat_client.html');

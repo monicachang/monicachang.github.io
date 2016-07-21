@@ -29,19 +29,20 @@ $(document).ready(function() {
 		var messageObject = {};
 		messageObject.username = $("#chat-name").val();
 		messageObject.text = $("#chat-input").val();
-		
+
 		//e.preventDefault();
 				var messagesplit = messageObject.text.split(" ");
 				var lastword = messagesplit[messagesplit.length - 1]
 				console.log(lastword);
 				
+				$("#api_result").text("");
 
 				$.ajax({
 					url: "https://api.spotify.com/v1/search",
 					data: {
-						q: lastword,
-						type: "track",
-						limit: "25"
+						q: lastword, //what you are searching up in spotify
+						type: "track", //the type of thing you are searching up in spotify
+						limit: "25" //how many results 
 					},
 					success: ajaxHandler
 				});
@@ -56,12 +57,15 @@ $(document).ready(function() {
 		{
 			console.log(data);
 
-			var results = data.tracks.items; //array of albums items (nested objects)
+			var results = data.tracks.items; //array of track items (nested objects)
 			for(var i = 0; i < results.length; i++) //interate through each item in array of albums
 			{
-				$("#api_result").append(results[i].name + "\n"); //change the .name to .id would give you the ids of the tracks instead of the names
+				console.log(results[i].artists[0]);
+				$("#api_result").append(results[i].name + "/" + results[i].artists[0].name + "/" + results[i].popularity + "\n"); //whatever comes after the period gives you what it will display
+				//$("#api-result").css("color", "rgb("(Math.round(results[i].popularity*2.55))",90,90)");
 			}
 		}
+
 
 
 	socket.on('chat message', function(msg){ //when we get an event called chat message, run the following function w/ parameter called msg and append to our list that message

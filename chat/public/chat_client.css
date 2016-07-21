@@ -18,7 +18,7 @@ body {
 	color: #839B7E;
 	font-family: times;
 	font-size: 16px;
-	width: 130px;
+	width: 135px;
 	border-radius: 3px;
 }
 
@@ -28,7 +28,7 @@ body {
 	text-align: center;
 	font-family: times;
 	font-size: 13px;
-	padding: 3.2px 9px;
+	padding: 3.2px 8px;
 	
 }
 
@@ -87,6 +87,8 @@ form #chat-input {
 	margin-right: .5%;
 	font-size: 14px;
 	font-family: times;
+	border-radius: 8px;
+	color: #839B7E;
 }
 
 form button {
