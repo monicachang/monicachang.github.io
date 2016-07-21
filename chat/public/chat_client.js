@@ -29,15 +29,12 @@ $(document).ready(function() {
 		var messageObject = {};
 		messageObject.username = $("#chat-name").val();
 		messageObject.text = $("#chat-input").val();
-
-		socket.emit("chat message", messageObject); //the function is to emit a command called chat message (we get to name this command "chat message") and along with that command attach some information to it (the value)//"chat message is let the server know that it's going to be a message"
-		$("#chat-input").val(""); //empties the box when you hit enter
-		return false; //prevents from refreshing page		
-
+		
 		//e.preventDefault();
 				var messagesplit = messageObject.text.split(" ");
 				var lastword = messagesplit[messagesplit.length - 1]
 				console.log(lastword);
+				
 
 				$.ajax({
 					url: "https://api.spotify.com/v1/search",
@@ -48,6 +45,11 @@ $(document).ready(function() {
 					},
 					success: ajaxHandler
 				});
+
+		socket.emit("chat message", messageObject); //the function is to emit a command called chat message (we get to name this command "chat message") and along with that command attach some information to it (the value)//"chat message is let the server know that it's going to be a message"
+		$("#chat-input").val(""); //empties the box when you hit enter
+		return false; //prevents from refreshing page		
+
 		});
 
 	function ajaxHandler(data)

@@ -29,6 +29,13 @@ app.get('/get_archive', function(req, res){ //when somebody pins the url /get_ar
 	res.send(chatArchive); //we want to use the response to send the chat archive 
 });
 
+
+app.use(express.static('public'));
+app.get('/chat', function(req,res){
+  res.sendFile(__dirname + '/chat_client.html');
+});
+
+
 http.listen(3000, function () {
   console.log("Example app listening on port 3000!"); // console log to the terminal
 });
