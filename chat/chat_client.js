@@ -12,9 +12,9 @@ $(document).ready(function() {
 				var msg = data[i]; //set msg to each thing in the data
 				if(msg.username == $("#chat-name").val()) //see if username in chat equals name in data field
 				{
-					$("#chat-log ul").append("<li class='me-line'><b>" + msg.username +  "</b>:<i>" + msg.text + "</i></li>"); //use ul because it's in the ul
+					$("#chat-log ul").append("<li class='me-line'><b>" + msg.username +  "</b>: <i>" + msg.text + "</i></li>"); //use ul because it's in the ul
 				}else{
-					$("#chat-log ul").append("<li class='them-line'><b>" + msg.username +  "</b>:<i>" + msg.text + "</i></li>");
+					$("#chat-log ul").append("<li class='them-line'><b>" + msg.username +  "</b>: <i>" + msg.text + "</i></li>");
 
 				}	
 			}
@@ -37,9 +37,9 @@ $(document).ready(function() {
 	socket.on('chat message', function(msg){ //when we get an event called chat message, run the following function w/ parameter called msg and append to our list that message
 		if(msg.username == $("#chat-name").val())
 			{
-				$("#chat-log ul").append("<li class='me-line'><b>" + msg.username +  "</b>:<i>" + msg.text + "</i></li>"); //use ul because it's in the ul
+				$("#chat-log ul").append("<li class='me-line'><b>" + msg.username +  "</b>: <i>" + msg.text + "</i></li>"); //use ul because it's in the ul
 			}else{
-				$("#chat-log ul").append("<li class='them-line'><b>" + msg.username +  "</b>:<i>" + msg.text + "</i></li>");
+				$("#chat-log ul").append("<li class='them-line'><b>" + msg.username +  "</b>: <i>" + msg.text + "</i></li>");
 
 			}	
 
