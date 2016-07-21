@@ -62,26 +62,28 @@ body {
 }
 
 form {
-	width: 95%;
-	left: 23px;
+	width: 93%;
+	left: 42px;
 	background-color: #fff;
 	position: fixed;
 	bottom: 40px;
 	border: none;
 	height: 10%;
 	border-radius: 12px;
+
 }
 
 #fieldsetmessagebox {
 	border: none;
 	padding: 13px;
+	padding-right: 1px;
 
 }
 
 form #chat-input {
 	border-color: #839B7E;
 	padding: 5px;
-	width: 89%; 
+	width: 86%; 
 	margin-right: .5%;
 	font-size: 14px;
 	font-family: times;
@@ -99,6 +101,18 @@ form button {
 	color:#ffffff;
 }
 
+#api-text {
+	text-align: right;
+	padding: 35px;
+	color: #ffffff;
+	font-family: times;
+	font-size: 13px;
+}
+
+#api_result {
+	text-align: right;
+	border-radius: 10px;
+}
 
 
 
