@@ -33,40 +33,60 @@ $(document).ready(function() {
 		//e.preventDefault();
 				var messagesplit = messageObject.text.split(" ");
 				var lastword = messagesplit[messagesplit.length - 1]
+				var numberofwords = messagesplit.length;
 				console.log(lastword);
 				
-				$("#api-text ul").text("");
+				//$("#api-text ul").text("");
 
 				$.ajax({
 					url: "https://api.spotify.com/v1/search",
 					data: {
-						q: lastword, //what you are searching up in spotify
+						q: lastword /*+ "%20tag:hipster"*/, //what you are searching up in spotify
 						type: "track", //the type of thing you are searching up in spotify
-						limit: "25" //how many results 
+						limit: numberofwords //how many results 
 					},
 					success: ajaxHandler
 				});
 
 		socket.emit("chat message", messageObject); //the function is to emit a command called chat message (we get to name this command "chat message") and along with that command attach some information to it (the value)//"chat message is let the server know that it's going to be a message"
 		$("#chat-input").val(""); //empties the box when you hit enter
-		return false; //prevents from refreshing page		
+		return false; //prevents from refreshing page
+			
+		//$("#sendbutton").css("background-color", "rgb("+numberofwords+",200,180)");	
 
 		});
 
 	function ajaxHandler(data)
 		{
-			console.log(data);
+			console.log(data);	
 
 			var results = data.tracks.items; //array of track items (nested objects)
-			for(var i = 0; i < results.length; i++) //interate through each item in array of albums
+			
+			if (results.length == 0) //if (results[1].popularity > 10, no hister tracks found)
+			{	
+				$("#api-text ul").append("<li>NO RESULTS FOUND</li>");
+				return false; //if empty do not bother with for loop
+			}	
+
+
+
+			for(var i = 0; i < results.length; i++) //interate through each item the array
 			{
 				//console.log(results[i].artists[0]);
 				//$("#api-test").append(results[i].name + "/" + results[i].artists[0].name + "/" + results[i].popularity + "<br>"); //whatever comes after the period gives you what it will display
 				//$("#api-test").css("color", "rgb("+Math.round(results[i].popularity*2.55)+",0,0)");
 				//console.log(Math.round(results[i].popularity*2.55));
-				$("#api-text ul").append("<li class='popularitycolor' style=color:rgb("+Math.round(results[i].popularity*2.55)+",200,180)>" + results[i].name + " | " + results[i].artists[0].name + " | " + results[i].popularity + "</li>");
+				var resultcolor = Math.round(results[i].popularity*25.5);
+				if (results[i].popularity < 10)
+			{
+				$("#api-text ul").append("<li class='popularitycolor' style=color:rgb("+resultcolor+",200,180)>" + results[i].name + " | " + results[i].artists[0].name + " | " + results[i].popularity + "</li>");
+			}
+				//$("#api-text ul").append("<li class='popularitycolor' style=color:rgb("+resultcolor+",200,180); hsl(180,75%,60%)>" + results[i].name + " | " + results[i].artists[0].name + " | " + results[i].popularity + "</li>");
 			}
 		}
+	
+
+		
 
 
 

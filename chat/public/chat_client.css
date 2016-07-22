@@ -39,7 +39,7 @@ body {
 	position: fixed;
 	top: 55px;
 	bottom: 90px;
-	width: 60%; /*changes how big the chat box is*/
+	width: 56%; /*changes how big the chat box is*/
 	overflow-y: scroll;
 	padding: 40px;
 }
@@ -109,12 +109,19 @@ form button {
 	color: #ffffff; 
 	font-family: times;
 	font-size: 13px;
+	width: 280px;
+	height: 350px;
+	position: absolute;
+	right: 10px;
+	overflow-y: scroll;
+
 }
 
 #api-text ul {
 	border-color: #ffffff;
 	border-radius: 8px;
 	padding-bottom: 10px;
+	list-style: none;
 }
 
 
