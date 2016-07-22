@@ -106,14 +106,15 @@ form button {
 #api-text {
 	text-align: right;
 	padding: 35px;
-	color: #ffffff;
+	color: #ffffff; 
 	font-family: times;
 	font-size: 13px;
 }
 
-#api_result {
-	text-align: right;
-	border-radius: 10px;
+#api-text ul {
+	border-color: #ffffff;
+	border-radius: 8px;
+	padding-bottom: 10px;
 }
 
 
