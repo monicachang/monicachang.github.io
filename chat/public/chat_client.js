@@ -2,38 +2,39 @@ $(document).ready(function() {
 
 	var socket = io(); //connect to the server or "pizza place"
 
-	var d = new Date();
-				var milliseconds = d.getTime(); //the number of milliseconds since midnight January 1, 1970
-				//console.log(milliseconds);
-				var timezonediffminutes = d.getTimezoneOffset(); // difference between UTC time and local time
-				var seconds = milliseconds / 1000;
-				var minutes = seconds / 60 - timezonediffminutes; //this is where I account for the time zone difference and gives you local time
-				var hours = minutes / 60;
-				var days = hours / 24;
-				var years = days / 365;
-				var hourstoday = Math.floor(hours) - Math.floor(days)*24;
-				var minutestoday = Math.floor(minutes) - Math.floor(hours)*60;
-				
-				if (minutestoday < 10)
-				{
-					minutestoday = "0" + minutestoday;
-				}
+		var d = new Date();
+		var milliseconds = d.getTime(); //the number of milliseconds since midnight January 1, 1970
+		//console.log(milliseconds);
+		var timezonediffminutes = d.getTimezoneOffset(); // difference between UTC time and local time
+		var seconds = milliseconds / 1000;
+		var minutes = seconds / 60 - timezonediffminutes; //this is where I account for the time zone difference and gives you local time
+		var hours = minutes / 60;
+		var days = hours / 24;
+		var years = days / 365;
+		var hourstoday = Math.floor(hours) - Math.floor(days)*24;
+		var minutestoday = Math.floor(minutes) - Math.floor(hours)*60;
+		
+		if (minutestoday < 10)
+		{
+			minutestoday = "0" + minutestoday;
+		}
 
-				var time;
-				if (hourstoday == 0)
-				{
-					time = "12" + ":" + minutestoday + " am";
-				}else if (hourstoday >= 1 && hourstoday < 12) 
-				{
-					time = hourstoday + ":" + minutestoday + " am";
-				}else if (hourstoday == 12)
-				{
-					time = "12" + ":" + minutestoday + " pm";
-				}else
-				{
-					time = (hourstoday - 12) + ":" + minutestoday + " pm";
-				}
-	
+		var time;
+		if (hourstoday == 0)
+		{
+			time = "12" + ":" + minutestoday + " am";
+		}else if (hourstoday >= 1 && hourstoday < 12) 
+		{
+			time = hourstoday + ":" + minutestoday + " am";
+		}else if (hourstoday == 12)
+		{
+			time = "12" + ":" + minutestoday + " pm";
+		}else
+		{
+			time = (hourstoday - 12) + ":" + minutestoday + " pm";
+		}
+
+
 
 	$("#chat-start").click(function(){//when you refresh the page, enter your username, and click the start chatting button, you will get your past conversation
 		$.ajax({
@@ -89,8 +90,7 @@ $(document).ready(function() {
 		$("#chat-log ul li.them-line").css("background-color", "rgb("+buttoncolorchange+",200,180)");
 		$("#chat-input").css("color", "rgb("+buttoncolorchange+",200,180)");
 		$("#chat-input").css("border-color", "rgb("+buttoncolorchange+",200,180)");
-		return false; //prevents from refreshing page
-				
+		return false; //prevents from refreshing page			
 
 		});
 
@@ -107,19 +107,14 @@ $(document).ready(function() {
 			}	
 
 
-
 			for(var i = 0; i < results.length; i++) //interate through each item the array
 			{
-				//console.log(results[i].artists[0]);
-				//$("#api-test").append(results[i].name + "/" + results[i].artists[0].name + "/" + results[i].popularity + "<br>"); //whatever comes after the period gives you what it will display
-				//$("#api-test").css("color", "rgb("+Math.round(results[i].popularity*2.55)+",0,0)");
 				//console.log(Math.round(results[i].popularity*2.55));
 				var resultcolor = Math.round(results[i].popularity*25.5);
-				if (results[i].popularity < 10)
-			{
-				$("#api-text ul").append("<li class='popularitycolor' style=color:rgb("+resultcolor+",200,180)>" + results[i].name + " | " + results[i].artists[0].name + " | " + results[i].popularity + "</li>");
-			}
-				//$("#api-text ul").append("<li class='popularitycolor' style=color:rgb("+resultcolor+",200,180); hsl(180,75%,60%)>" + results[i].name + " | " + results[i].artists[0].name + " | " + results[i].popularity + "</li>");
+					if (results[i].popularity < 10)
+				{
+					$("#api-text ul").append("<li class='popularitycolor' style=color:rgb("+resultcolor+",200,180)>" + results[i].name + " | " + results[i].artists[0].name + " | " + results[i].popularity + "</li>");
+				}
 			}
 		}
 	
@@ -133,7 +128,6 @@ $(document).ready(function() {
 				$("#chat-log ul").append("<li class='me-line'><b>" + msg.username +  "</b>: <i>" + msg.text + " (" + time + ")</i></li>"); //use ul because it's in the ul
 			}else{
 				$("#chat-log ul").append("<li class='them-line'><b>" + msg.username +  "</b>: <i>" + msg.text + " (" + time + ")</i></li>");
-
 			}	
 
 	}); 
